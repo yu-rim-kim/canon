@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/slick.js"></script>
+    <script lang="ja">
+        $(function(){
+            $(".util_myca").hover(function(){
+                $(".my").stop().show();
+                $(this).children("a").css("background","none")
+
+            }, function(){
+                $(".my").stop().hide()
+                $(this).children("a").css("background","url('images/ico_down01.gif') no-repeat right")
+            })//util_myca").hover
+
+
+            $(".gnb_p").hover(function(){
+                $(".d_wrap").stop().slideDown()
+            }, function(){
+                $(".d_wrap").stop().slideUp()
+            })// $(".gnb_p").hover
+
+
+            $(".main_visual").slick({   
+                autoplay: true,
+                autoplaySpeed : 3000,
+                arrows:false,
+                swipe:false,
+                dots: true
+            });//$(".main_visual").slick
+
+            var sw = 0; 
+            $(".stop").click(function(e){
+                e.preventDefault();
+                if(sw == 0 ){
+                    $(".stop").addClass("on");
+                    $(".main_visual").slick("slickPause")
+                    sw=1;
+                    
+                }else{
+                    $(".stop").removeClass("on");
+                    $(".main_visual").slick("slickPlay");
+                    sw=0
+                }//
+            })//$(".stop").click
+            
+            $(".photo_wrap").slick({
+                autoplay: true,
+                arrows:false,
+                dots: true
+            })//$(".photo_wrap").slick
+
+            $(".pause").click(function(){
+                if(sw == 0) {
+                    $(".photo_wrap").slick("slickPause");
+                    $(".pause").addClass("on")
+                    sw=1;
+                } else{
+                    $(".pause").removeClass("on");
+                    $(".photo_wrap").slick("slickPlay");
+                    sw=0
+                }
+            })//$(".pause").click
+
+            $(".banner2").slick({
+                autoplay:false,
+                arrows:false,
+                dots:true
+
+            })//$(".banner2").slick
+
+            $(".play").click(function(){
+                if(sw == 0){
+                    $(".banner2").slick("slickPlay");
+                    $(".play").addClass("on")
+                    sw=1;
+                }else{
+
+                    $(".banner2").slick("slickPause");
+                    $(".play").removeClass("on")
+                    sw=0;   
+                }
+
+            })//$(".play").click
+
+            $(".p_list").slick({
+                autoplay:true,
+                arrows:false,
+                dots:true,
+                slidesToShow:2,
+                slidesToScroll:2
+            })
+
+            $(".p_stop").click(function(){
+
+                if(sw == 0){
+                    $(".p_list").slick("slickPause");
+                    $(".p_stop").addClass("on")
+                    sw=1;
+                } else {
+                    $(".p_list").slick("slickPlay");
+                    $(".p_stop").removeClass("on");
+                    sw=0
+                }
+
+            })//$(".p_stop").click
+
+            $(".notice").slick({
+                autoplay: true,
+                arrows:true,
+                vertical:true
+            })
+
+
+        })//jquery 
+    </script>
+    <title>canon</title>
+</head>
+<body>
+    <header id="header">
+        <div class="header_inner">
+            <div class="h_top">
+                <h1><a href="index.html">캐논로고</a></h1>
+
+                <ul class="util">
+                    <li class="util_log" ><a href="#">로그인</a></li>
+                    <li class="util_join"><a href="#">회원가입</a></li>
+                    <li class="util_myca">
+                        <a href="#">마이캐논</a>
+                        <ul class="my">
+                            <li><a href="#">마이 정품등록</a></li>
+                            <li><a href="#">마이 쿠폰</a></li>
+                            <li><a href="#">주문/배송조회</a></li>
+                            <li><a href="#">장바구니</a></li>
+                        </ul><!-- my -->
+                    </li>
+                    <li class="util_regist"><a href="#">정품등록하기</a></li>
+                    <li class="util_sns"><a href="#">sns</a></li>
+                    <li class="util_serch"><input type="text"></li>
+                    <li class="util_site"><a href="#">캐논 사이트</a></li>
+                </ul><!-- util -->
+            </div><!--h_top 탑헤드 종료-->
+
+            <div class="h_bottom">
+                <ul class="gnb">
+                    <li class="gnb_p">
+                        <a href="#">제품</a>
+                        <div class="d_wrap">
+                            <ul class="gnb_banner">
+                                <li> <a href="#"> <img src="images/1536841390688_86nAOe3K5V.jpg" alt="banner"></a></li>
+                                <li> <a href="#"> <img src="images/gnbban_product_discontinue.png" alt="banner"></a></li>
+                            </ul><!-- gnb_banner -->
+                            <ul class="gnb_sub">
+                                <li>
+                                    <a href="#">
+                                    <img src="images/lnb_prod_bg1_1.png" alt="prod">
+                                    <p>DSLR</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                    <img src="images/lnb_prod_bg21.png" alt="prod">
+                                    <p>미러리스</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                    <img src="images/lnb_prod_bg3.png" alt="prod">
+                                    <p>렌즈</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                    <img src="images/lnb_prod_bg41.png" alt="prod">
+                                    <p>컴팩틑 카메라</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                    <img src="images/lnb_prod_bg5.png" alt="prod">
+                                    <p>포토 프린터</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                    <img src="images/lnb_prod_bg7.png" alt="prod">
+                                    <p>캠코더</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                    <img src="images/lnb_prod_bg6.png" alt="prod">
+                                    <p>시네마</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                    <img src="images/lnb_prod_bg8.png" alt="prod">
+                                    <p>BCTV</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                    <img src="images/lnb_prod_bg9.png" alt="prod">
+                                    <p>디스플레이</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                    <img src="images/lnb_prod_bg11.png" alt="prod">
+                                    <p>쌍안경</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                    <img src="images/lnb_prod_bg15.png" alt="prod">
+                                    <p>프로젝터</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                    <img src="images/lnb_prod_bg12.png" alt="prod">
+                                    <p>액세서리</p>
+                                    </a>
+                                </li>
+                            </ul><!-- gnb_sub -->
+                        </div><!-- d_wrap -->
+                    </li>
+                    <li><a href="#">고객지원</a></li>
+                    <li><a href="#">이벤트</a></li>
+                    <li><a href="#"> <span class="e_img">e</span>스토어</a></li>
+                    <li><a href="#">Rchive</a></li>
+                </ul><!-- gnb -->
+
+                <ul class="g_gallery">
+                    <li class="g_p"><a href="#"><span></span>포토갤러리</a></li>
+                    <li class="g_g"><a href="#"><span></span>캐논갤러리</a></li>
+                    <li class="g_m"><a href="#"><span></span>매거진</a></li>
+                    <li class="g_a"><a href="#"><span></span>아카데미</a></li>
+                </ul><!-- g_gallery -->
+            </div>   <!-- h_bottom 탑 버틈 종료 -->
+        </div><!-- header_inner 종료 -->
+    </header><!-- header 종료-->
+
+    <section id="main" class="clear_fix">
+        <div class="main_visual">
+            <div class="main1"><a href="#"></a></div>
+            <div class="main2"><a href="#"></a></div>
+            <div class="main3"><a href="#"></a></div>
+            <div class="main4"><a href="#"></a></div>
+            <div class="main5"><a href="#"></a></div>
+        </div><!-- main_visual 종료 -->
+        <button class="stop">정지</button>
+
+        <div class="section1 clear_fix">
+            <div class="photo_wrap">
+                <div class="photo">
+                    <a href="#">
+                        <img src="images/1594281520529_r31f92akRk.jpg" alt="미러리스">
+                        <div class="p_title">
+                            <h3>미러리스</h3>
+                            <div class="line"></div>
+                            <img src="images/1594281683025_Q3ICK0gBde.jpg" alt="미러리스">
+                            <h2>EOS R5</h2>
+                        </div>    
+                    </a>
+                </div><!-- photo -->
+
+                <div class="photo">
+                    <a href="#">
+                        <img src="images/1594281753186_Np2FESZgEU.jpg" alt="RF렌즈">
+                        <div class="p_title">
+                            <h3>RF렌즈</h3>
+                            <div class="line"></div>
+                            <img src="images/1594281759405_aMVC36TUDk.jpg" alt="RF렌즈">
+                            <h2>RF85mm F2 MACRO IS STM</h2>
+                        </div>    
+                    </a>
+                </div><!-- photo -->
+
+                <div class="photo">
+                    <a href="#">
+                        <img src="images/1592811586255_BBiGcs4QwO.jpg" alt="DLSR">
+                        <div class="p_title">
+                            <h3>DLSR</h3>
+                            <div class="line"></div>
+                            <img src="images/1590474358464_Brp8gcpzSQ.png" alt="DLSR">
+                            <h2>EOS 850D</h2>
+                        </div>    
+                    </a>
+                </div><!-- photo 종료   -->
+            </div><!-- photo_wrap -->
+            <button class="pause">정지</button>
+
+            <div class="banner1">
+                <a href="#">
+                    <img src="images/eoswebcam.jpg" alt="Eos">
+                    <div class="b_title">
+                        <h3>EOS 웹캡 유틸리티 소프트웨어 출시</h3>
+                        <div class="line"></div>
+                        <p>캐논 카메라를 웹캠으로 변환해주는 소프웨어</p>
+                    </div>
+                </a>
+            </div><!-- banner1종료 -->
+
+            <div class="banner2">
+                <div class="ban">
+                    <a href="#">
+                        <img src="images/KakaoTalk_20210421_095256345_01.jpg" alt=banner">
+                        <div class="b_title">
+                            <h3>제품 리뷰</h3>
+                            <div class="line"></div>
+                            <p>EOS R6리뷰</p>
+                        </div>
+                    </a>
+                </div><!-- ban -->
+
+                <div class="ban">
+                    <a href="#">
+                        <img src="images/1573636114334_l6bQ2TL0rc.jpg" alt=banner">
+                        <div class="b_title">
+                            <h3>제품 리뷰</h3>
+                            <div class="line"></div>
+                            <p>Canon Log 관한 모든 것</p>
+                        </div>
+                    </a>
+                </div><!-- ban -->
+
+                <div class="ban">
+                    <a href="#">
+                        <img src="images/1536824136234_iTWY1CxypA.jpg" alt=banner">
+                        <div class="b_title">
+                            <h3>스마트 렌즈 파인더</h3>
+                            <div class="line"></div>
+                            <p>캐논 렌즈를 찾는 스마트한 방법</p>
+                        </div>
+                    </a>
+                </div><!-- ban -->
+            </div><!-- banner2 종료 -->
+            <button class="play">play</button>
+        </div><!-- section1 종료-->
+
+        <div class="section2 clear_fix">
+            <div class="gallery">
+                <a href="#">
+                    <img src="images/1594618392361_UW8Jt9zjzO.jpg" alt="gallery">
+                    <div class="tit">
+                        <h3>Photo Gallery</h3>
+                        <h4>꽃비내리다</h4>
+                        <p>EOS 5D Mark IV I EF 100-400mm f/4.5-5.6L IS ISM</p>
+                    </div>
+                </a>
+            </div><!-- gallery 종료-->
+
+            <div class="product">
+                <h2> <span>e </span> 스토어</h2>
+                <div class="line"></div>
+                <div class="p_list">
+                    <div class="Pro_p">
+                        <a href="#">
+                            <img src="images/1589358791875_kz2Z81kwGs.jpg" alt="img">
+                            <h3>EOS R</h3>
+                            <p>캐논의 첫 번째 풀프레임 미러리스</p>
+                            <p class="price">￦ 2,399,000</p>
+                        </a>
+                    </div><!-- Pro_p -->
+
+                    <div class="Pro_p">
+                        <a href="#">
+                            <img src="images/1589358945740_vyMz0OFnbk.jpg" alt="img">
+                            <h3>EOS 90D</h3>
+                            <p>Be Professional</p>
+                            <p class="price">￦ 1,549,000</p>
+                        </a>
+                    </div><!-- Pro_p -->
+
+                    <div class="Pro_p">
+                        <a href="#">
+                            <img src="images/1573722139851_1l6xsWJyyH.jpg" alt="img">
+                            <h3>EOS RP</h3>
+                            <p>가볍게 즐기는 모두의 풀프레임</p>
+                            <p class="price">￦ 1,449,000</p>
+                        </a>
+                    </div><!-- Pro_p -->
+
+                    <div class="Pro_p">
+                        <a href="#">
+                            <img src="images/1590473777681_75M5u5atON.jpg" alt="img">
+                            <h3>EOS M6 Mark II</h3>
+                            <p>사진도, 영상도 완벽 퍼포먼스</p>
+                            <p class="price">￦ 1,329,000</p>
+                        </a>
+                    </div><!-- Pro_p -->
+                </div><!-- p_list -->
+                
+                <button class="p_stop">정지</button>
+
+            </div><!-- product 종료 -->
+
+        </div><!-- section2 종료 -->
+
+        <div class="section3">
+            <ul class="list">
+                <li>
+                    <a href="#">
+                        <img src="images/1580721177237_MTqzuOU3n5.jpg" alt="img">
+                        <h4>캐논 플렉스</h4>
+                        <p>사진, 영상, 문화의 ‘즐거움’과 ‘체험’ 하는<br>복합 문화 공간입니다.</p>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#">
+                        <img src="images/1492676215327_lSMYTk9ryV.jpg" alt="img">
+                        <h4>캐논 스마트렌즈파인더</h4>
+                        <p>캐논 렌즈와 관련된 모든 정보를<br>스마트 렌즈파인더 한 곳에서 확인하세요.</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <img src="images/1594800250965_SsbWGJfmxv.jpg" alt="img">
+                        <h4>Rchive</h4>
+                        <p>EOS R system의 모든 것을<br>한자리에서 확인해보세요.</p>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <img src="images/1423707176234_CA5pzvvvIH.jpg" alt="img">
+                        <h4>CPS</h4>
+                        <p>캐논 정품을 사용하는 프로 사진가를 위한<br>캐논만의 특별한 서비스</p>
+                    </a>
+                </li>
+            </ul><!-- list -->
+        </div><!-- section3 종료-->
+
+        <div class="section4">
+            <ul class="notice">
+                <li>
+                    <a href="#">
+                        <h4> <span>[ 고객지원 ]</span> 택배전용 캐논서포트센터 이전 안내</h4>
+                        <p>택배전용 캐논서포트센터 이전 안내
+                            안녕하세요 캐논코리아컨슈머이미징(주)입니다.
+                            항상 캐논 제품을 사랑해 주시는 고객님께 감사의 사랑해 주시는 고객님께 감사의 사랑해 주시는 고객님께 감사의 ··</p>
+                    </a>
+                    <p class="date">2021.03.12 조회수 208 </p>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <h4> <span>[ 고객지원 ]</span> 캐논플렉스 이전 안내</h4>
+                        <p>캐논플렉스 이전 안내
+                            안녕하세요, 캐논코리아
+                            컨슈머 이미징(주)입니다.
+                            항상 캐논 제품을 사랑해 주시는 고객님께 감사의 말씀 드립니다·</p>
+                    </a>
+                    <p class="date">2020.01.06 &nbsp;조회수 2489 </p>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <h4> <span>[ 고객지원 ]</span> 카카오톡 상담 서비스 시행 안내</h4>
+                        <p>카카오톡 상담 서비스 시행 안내
+                            안녕하세요. 캐논코리아컨슈머이미징㈜ 입니다.
+                            캐논 제품을 이용해 주시는 고객님께 감사의 말씀 드립니다.</p>
+                    </a>
+                    <p class="date">2019.02.13&nbsp;조회수 2870 </p>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <h4> <span>[ 고객지원 ]</span> KIT제품 정품등록 안내</h4>
+                        <p>KIT제품 정품등록 안내
+                            안녕하세요. 캐논코리아 컨슈머이미징㈜입니다.
+                            항상 캐논 제품을 사랑해 주시는 고객님께 감사의 말씀을 드립니다.··</p>
+                    </a>
+                    <p class="date">2020.07.17&nbsp;조회수 28 </p>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <h4> <span>[ 고객지원 ]</span>EOS 웹캠 유틸리티 소프트웨어 출시 안내</h4>
+                        <p>캐논 디지털 시네마 카메라 EOS C700 펌웨어 버전 1.0.8.1.00
+                            캐논을 이용해주시는 고객님께 감사 드립··</p>
+                    </a>
+                    <p class="date">2020.07.16 &nbsp;조회수 13 </p>
+                </li>
+            </ul><!-- notice -->
+        </div><!-- section4 종료-->
+
+
+
+    </section><!-- main -->
+</body>
+</html>
